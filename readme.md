@@ -19,13 +19,14 @@ A support engineer receives a report that an Ubuntu server may be running slowly
 - Check open listening ports
 - Review firewall status
 - Display recent system errors
+- Check available package updates
 - Practice Bash scripting for support workflows
 
 ## Environment
 
 - OS: Ubuntu Linux
 - Shell: Bash
-- Tools: `uptime`, `hostnamectl`, `df`, `free`, `systemctl`, `journalctl`, `ss`, `ufw`, `apt`
+- Tools: `hostnamectl`, `uptime`, `df`, `free`, `systemctl`, `journalctl`, `ss`, `ufw`, `apt`
 
 ## Skills Demonstrated
 
@@ -35,6 +36,7 @@ A support engineer receives a report that an Ubuntu server may be running slowly
 - Disk and memory checks
 - Service diagnostics
 - Log review
+- Firewall status review
 - Package update awareness
 
 ## Script Checks
@@ -42,13 +44,14 @@ A support engineer receives a report that an Ubuntu server may be running slowly
 The script reports:
 
 - Hostname and OS details
+- Current user
 - System uptime
 - Disk usage
 - Memory usage
 - Failed systemd services
 - Listening ports
 - UFW firewall status
-- Recent system errors
+- Recent high-priority journal errors
 - Available package updates
 
 ## How to Run
@@ -58,3 +61,57 @@ Clone the repository:
 ```bash
 git clone https://github.com/michaeltucker24/ubuntu-health-check-script.git
 cd ubuntu-health-check-script
+```
+
+Make the script executable:
+
+```bash
+chmod +x ubuntu-health-check.sh
+```
+
+Run the script:
+
+```bash
+./ubuntu-health-check.sh
+```
+
+## Example Commands Used
+
+```bash
+hostnamectl
+whoami
+uptime
+df -h
+free -h
+systemctl --failed
+journalctl -p 3 -xb
+ss -tuln
+sudo ufw status verbose
+apt list --upgradable
+```
+
+## Sample Output
+
+A sample output file is included in this repository:
+
+```text
+sample-output.txt
+```
+
+## Support Use Case
+
+This script can be used during initial support triage to collect a quick system health snapshot before deeper investigation.
+
+It is useful for identifying obvious issues such as high disk usage, low memory, failed services, missing firewall visibility, recent system errors, or pending package updates.
+
+## Limitations
+
+This script is designed for basic triage only. It does not replace deeper troubleshooting, service-specific log review, application monitoring, or production-grade observability tools.
+
+## Lessons Learned
+
+This project reinforced how Bash automation can reduce repetitive checks and improve the speed of initial Linux support investigations.
+
+## Portfolio Note
+
+This project is part of my Linux Support Engineer portfolio. It demonstrates practical troubleshooting, automation, and systems administration skills relevant to Ubuntu/Linux support roles.
