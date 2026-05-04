@@ -1,1 +1,45 @@
 
+===== Ubuntu Health Check =====
+
+===== Host Information =====
+Static hostname: ubuntu-lab
+Operating System: Ubuntu 24.04 LTS
+Kernel: Linux 6.8.0-generic
+Architecture: x86-64
+
+===== Current User =====
+michael
+
+===== Uptime =====
+up 2 hours, 14 minutes
+
+===== Disk Usage =====
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        25G   12G   13G  48% /
+
+===== Memory Usage =====
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       1.1Gi       2.2Gi       120Mi       500Mi       2.4Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+===== Failed systemd Services =====
+0 loaded units listed.
+
+===== Listening Ports =====
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:Port
+tcp   LISTEN 0      128    0.0.0.0:22        0.0.0.0:*
+tcp   LISTEN 0      128    [::]:22           [::]:*
+
+===== Firewall Status =====
+Status: active
+22/tcp ALLOW Anywhere
+22/tcp (v6) ALLOW Anywhere (v6)
+
+===== Recent High-Priority Journal Errors =====
+No recent high-priority journal errors found in this sample output.
+
+===== Available Package Updates =====
+Listing...
+bash/jammy-updates 5.1-6ubuntu1 amd64 [upgradable from: 5.1-6ubuntu0]
+
+===== Health Check Complete =====
